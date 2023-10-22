@@ -18,19 +18,33 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
+#ifndef _AVR_REGISTERS_H_
+#define _AVR_REGISTERS_H_
 
-#include "include/avr_registers.h"
+//
+// Utils
+//
+#define SET_BIT(REG, N) REG |= (0x1 << (N + 1u))
+#define CLEAR_BIT(REG, N) REG &= ~(0x1 << (N + 1u))
 
-int main (int argc, char** argv)
-{
-	// Config SPI for data transfer
-	SPCR = 0x0; // Clear
-	SET_BIT(SPCR, 6); // Enable SPI
-	SET_BIT(SPCR, 4); // We (the AVR) are going to act as the Master of the LED
+//
+// Data Port
+//
+#define PORTB 	*((volatile uint8_t*)0x25)
+#define PORTC 	*((volatile uint8_t*)0x28)
+#define PORTD 	*((volatile uint8_t*)0x2B)
 
+//
+// Data Direction 
+//
+#define DDRB	*((volatile uint8_t*)0x24)
+#define DDRC	*((volatile uint8_t*)0x27)
+#define DDRD	*((volatile uint8_t*)0x2A)
 
-	// Clear SPI register
-	SPCR = 0x0;
-	return 0x0;
-}
+//
+// SPI
+//
+#define SPCR	*((volatile uint8_t*)0x4C)	// Control register
+#define SPDR 	*((volatile uint8_t*)0x4E)	// Data register (MOSI)
+
+#endif
