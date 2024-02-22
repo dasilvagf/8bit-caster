@@ -2,7 +2,7 @@
 			8bit-ray caster
 Ray-Caster written in C99 for the ATmega328 and the LCD TFT ST7735.
 
-Copyright (C) 2023  Gabriel Felipe da Silva
+Copyright (C) 2023  Gabriel Felipe S. da Silva
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,33 +18,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef _AVR_REGISTERS_H_
-#define _AVR_REGISTERS_H_
-
-//
-// Utils
-//
-#define SET_BIT(REG, N) REG |= (0x1 << (N + 1u))
-#define CLEAR_BIT(REG, N) REG &= ~(0x1 << (N + 1u))
-
-//
-// Data Port
-//
-#define PORTB 	*((volatile uint8_t*)0x25)
-#define PORTC 	*((volatile uint8_t*)0x28)
-#define PORTD 	*((volatile uint8_t*)0x2B)
-
-//
-// Data Direction 
-//
-#define DDRB	*((volatile uint8_t*)0x24)
-#define DDRC	*((volatile uint8_t*)0x27)
-#define DDRD	*((volatile uint8_t*)0x2A)
-
-//
-// SPI
-//
-#define SPCR	*((volatile uint8_t*)0x4C)	// Control register
-#define SPDR 	*((volatile uint8_t*)0x4E)	// Data register (MOSI)
-
-#endif
+static const uint8_t* level_0[] =
+{
+	/* thats how we gonna store the maps
+	 * we'll compress this with RLE, so we don't a lot of static space
+	==========================================
+	=
+	=
+	*/
+};
