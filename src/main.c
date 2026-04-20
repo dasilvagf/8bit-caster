@@ -18,8 +18,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include <avr-base/avr_registers.h>
-#include <devices/st7735/st7735.h>
+#include <../avr-lib/include/avr-base/avr_registers.h>
+#include <../avr-lib/include/devices/st7735/st7735.h>
 
 int main (int argc, char** argv)
 {

@@ -2,6 +2,7 @@
 *.o
 *.hex
 *.out
-*.bat
-*.bat
 *.a
+docs/
+bin/
+.vscode/
