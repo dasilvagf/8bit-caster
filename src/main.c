@@ -2,7 +2,7 @@
 			8bit-ray caster
 Ray-Caster written in C99 for the ATmega328 and the LCD TFT ST7735.
 
-Copyright (C) 2023  Gabriel Felipe S. da Silva
+Copyright (C) 2023-2026  Gabriel Felipe S. da Silva
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ int main (int argc, char** argv)
 	// Arduino UNO board oscillator frequency = 16 MHz.
 	init_spi(16u);
 
-
+	
 
 	close_spi();
 
