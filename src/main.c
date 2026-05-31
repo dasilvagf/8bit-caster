@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include <../avr-lib/include/avr-base/avr_registers.h>
+#include <../avr-lib/include/boards/arduino/arduino.h>
 #include <../avr-lib/include/devices/st7735/st7735.h>
 
 int main (int argc, char** argv)
@@ -31,9 +31,11 @@ int main (int argc, char** argv)
 	// Arduino UNO board oscillator frequency = 16 MHz.
 	init_spi(16u);
 
-	
+	// copy 10u over SPI
+	uint8_t i = avr_spi_bidrec_transfer(10u);
 
 	close_spi();
+	flash_led(uno_board_type, i);
 
 #pragma GCC diagnostic pop
 	return 0x0;
